@@ -4,6 +4,9 @@ A horror-themed interactive developer portfolio with a hidden admin panel for ma
 
 ---
 
+<img width="800" height="366" alt="ezgif-634cd095bea1b9fb" src="https://github.com/user-attachments/assets/11942445-f1d8-4234-aa5e-a1355876eef9" />
+
+
 ## Overview
 
 The portfolio presents itself as a dark, occult-themed interface. Visitors must "break the seal" to reveal the projects and social links. Behind the scenes, a hidden admin panel — **The Containment Zone** — allows full CRUD management of all portfolio content via a terminal-style UI.
