@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base ─────────────────────────────────────────────────────────────────── */
+
+body {
+  background-color: #10150F;
+  color: #8c9e82;
+  font-family: "Playfair Display", serif;
+}
+
+/* ─── Film Grain Overlay ────────────────────────────────────────────────────── */
+/*
+ * .noise-bg — static SVG fractal noise applied as a fixed overlay.
+ * pointer-events: none ensures it never blocks interaction.
+ */
+.noise-bg {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.08'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
+
+/* ─── Occult Cursor Dot ─────────────────────────────────────────────────────── */
+/*
+ * .cursor-dot — 6px glowing dot that replaces the default cursor.
+ * Positioned via left/top only (no transform) per spec requirement 2.6.
+ * pointer-events: none so it never blocks interaction.
+ */
+.cursor-dot {
+  position: fixed;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #8c9e82;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow:
+    0 0 6px 2px #8c9e82,
+    0 0 12px 4px #3a4f32;
+  transform: translate(-50%, -50%);
+}
+
+/* ─── Cursor None Utility ───────────────────────────────────────────────────── */
+.cursor-none {
+  cursor: none;
+}
